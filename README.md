@@ -20,10 +20,12 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 - **Unidad 2:** Procesos de integración continua, pruebas y monitoreo de una arquitectura de software
 
 - **Unidad 3:** Procesos de despliegue continuo de una arquitectura de software
+	- [Introducción a Docker](unidad3/introduccion-docker.md)
+	- Introducción a Docker-Compose
+	- Introducción a Kubernete
 
-- **Proyecto transversal** Construcción de un software para la indexación y búsqueda de información
-	- Tutorial de web-scraping en Python
-
+- **Proyecto transversal** Construcción de un software para la indexación y búsqueda de información en un ecosistema de medios
+	- [Web-scraping en Python]()
 
 ***
 ## Bibliografía 
@@ -47,5 +49,5 @@ Docker: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 ***
 ## Otros recursos
 - Slack: https://escueladeinformatica.slack.com Canal #229
-- [Programa del curso](Programa_INFO229_2019.pdf)
+- [Programa del curso](Programa_INFO229__2019.pdf)
 
