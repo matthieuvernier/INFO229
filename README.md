@@ -25,10 +25,12 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 	- Introducción a Kubernete
 
 - **Proyecto transversal** Construcción de un software para la indexación y búsqueda de información en un ecosistema de medios
-	- [Web-scraping en Python]()
+	- [Web-scraping en Python](proyecto/web-scraping-python.ipynb)
 
 ***
 ## Bibliografía 
+
+[bibliografia](bibliografia/)
 
 Software Engineering, 10th Edition. Ian Sommerville (2016)
 
