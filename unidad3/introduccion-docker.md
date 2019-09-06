@@ -1,6 +1,6 @@
 ## Universidad Austral de Chile
 
-# INFO133: Base de Datos
+# INFO229: Arquitectura de software
 
 ### Responsable: Matthieu Vernier, mvernier@inf.uach.cl
 
@@ -10,7 +10,7 @@ Este tutorial es inspirado del tutorial de [Alexander Ryabtsev](https://djangost
 
 ### ¿Qué es Docker y la integración por contenedores?
 
-[Docker](https://www.docker.com/resources/what-container) corresponde a una herramienta de código abierto  que sirve para empaquetar, transportar y ejecutar cualquiera aplicación como si fuese un contenedor ligero. Esta herramienta es un nuevo modelo de virtualización que se encarga de crear una capa de abstracción con el sistema operativo.
+[Docker](https://www.docker.com/resources/what-container) corresponde a una herramienta de código abierto  que sirve para empaquetar, transportar y ejecutar softwares de distintos niveles de complejidad. Esta herramienta es un nuevo modelo de virtualización que se encarga de crear una capa de abstracción con el sistema operativo.
 
 La idea principal de esta herramienta es crear contenedores portables para que las aplicaciones de software puedan ser ejecutadas en cualquier máquina que tenga Docker instalado, sin importar el sistema operativo que la máquina tenga instalado, facilitando enormemente los despliegues de aplicaciones.
 
@@ -40,21 +40,18 @@ No hay necesidad de instalar aplicaciones de terceros como MySQL, Redis, Elastic
 
 - **Práctica encapsulación de aplicaciones**
 
-Usted puede entregar su solicitud en una sola pieza. La mayoría de los lenguajes de programación, frameworks y todos los sistemas operativos tienen sus propios gestores de paquetes. E incluso si su aplicación puede ser empaquetada con su gestor de paquetes nativo, podría ser difícil crear un puerto para otro sistema.
-
-Docker le ofrece un formato de imagen unificado para distribuir sus aplicaciones a través de diferentes sistemas host y servicios cloud. Puede entregar su aplicación en una sola pieza con todas las dependencias requeridas (incluidas en una imagen) listas para ser ejecutadas.
+Usted puede entregar su arquitectura de software en una sola pieza. Docker ofrece un formato de imagen unificado para distribuir sus aplicaciones a través de diferentes sistemas host y servicios cloud. Puede entregar su aplicación en una sola pieza con todas las dependencias requeridas (incluidas en una imagen) listas para ser ejecutadas.
 
 
 - **El mismo comportamiento en la máquina local / desarrollo / servidores de producción**
 
-Docker no puede garantizar al 100% la paridad desarrollo / puesta en escena / producción, porque siempre está el factor humano. Pero reduce a casi cero la probabilidad de error causado por diferentes versiones de sistemas operativos, dependencias del sistema, etc.
+Reduce a casi cero la probabilidad de error causado por diferentes versiones de sistemas operativos, dependencias del sistema, etc.
 
 Con el enfoque correcto para construir imágenes Docker, su aplicación utilizará la misma imagen base con la misma versión del sistema operativo y las dependencias necesarias.
 
 - **Monitoreo fácil y claro**
 
-Docker provee una manera unificada de leer los archivos de registro de todos los contenedores en ejecución. No necesita recordar todas las rutas específicas donde su aplicación y sus dependencias almacenan los archivos de registro y escriben ganchos personalizados para manejar esto.
-Puede integrar un controlador de registro externo y supervisar los archivos de registro de la aplicación en un solo lugar.
+Docker provee una manera unificada de leer los logs de todos los contenedores en ejecución. No necesita recordar todas las rutas específicas donde su aplicación y sus dependencias almacenan los archivos de logs.
 
 - **Fácil de escalar**
 
@@ -78,17 +75,15 @@ sudo usermod -aG docker username
 
 ### Terminología
 
-	**Imagen** - Una descripción estática de la arquitectura de software que se quiere despliegar.
+**Imagen** - Una descripción estática de la arquitectura de software que se quiere despliegar.
 
-	**Contenedor** - una instancia en ejecución que encapsula la arquitectura de software funcionando. Los contenedores siempre se crean a partir de imágenes. Un contenedor puede exponer puertos y volúmenes para interactuar con otros contenedores o con el mundo exterior. Los contenedores pueden ser fácilmente eliminados / removidos y recreados de nuevo en muy poco tiempo.
+**Contenedor** - una instancia en ejecución que encapsula la arquitectura de software funcionando. Los contenedores siempre se crean a partir de imágenes. Un contenedor puede exponer puertos y volúmenes para interactuar con otros contenedores o con el mundo exterior. Los contenedores pueden ser fácilmente eliminados / removidos y recreados de nuevo en muy poco tiempo.
 
-	**Port (Puerto)** - un puerto TCP/UDP en su significado original. Corresponden a direcciones que sirven de punto de integración entre varios softwares. Los puertos pueden estar expuestos al mundo exterior (accesible desde el sistema operativo del host) o conectados a otros contenedores, es decir, accesibles sólo desde esos contenedores e invisibles para el mundo exterior. 
+**Port (Puerto)** - un puerto TCP/UDP en su significado original. Corresponden a direcciones que sirven de punto de integración entre varios softwares. Los puertos pueden estar expuestos al mundo exterior (accesible desde el sistema operativo del host) o conectados a otros contenedores, es decir, accesibles sólo desde esos contenedores e invisibles para el mundo exterior. 
 
-	**Volumen** - puede ser descrito como una carpeta compartida dónde se almacenan los datos útiles. Los volúmenes se inicializan cuando se crea un contenedor. Los volúmenes están diseñados para datos persistentes, independientemente del ciclo de vida del contenedor.
+**Volumen** - puede ser descrito como una carpeta compartida dónde se almacenan los datos útiles. Los volúmenes se inicializan cuando se crea un contenedor. Los volúmenes están diseñados para datos persistentes, independientemente del ciclo de vida del contenedor.
 
-	**Registro** - el servidor que almacena las imágenes Docker. Puede ser comparado con Github - puede extraer una imagen del registro para desplegarlo localmente, y empujar las imágenes construidas localmente al registro.
-
-    	**Docker Hub** - un registro con interfaz web proporcionada por Docker Inc. Almacena muchas imágenes Docker con diferentes programas. Docker Hub es una fuente de imágenes "oficiales" de Docker realizadas por el equipo Docker o en cooperación con el fabricante original del software (no significa necesariamente que estas imágenes "originales" procedan de fabricantes oficiales de software). Las imágenes oficiales enumeran sus vulnerabilidades potenciales.
+**Docker Hub** - un servidor con interfaz web proporcionada por Docker Inc. Almacena muchas imágenes Docker con diferentes programas. Docker Hub es una fuente de imágenes "oficiales" de Docker realizadas por el equipo Docker o en cooperación con el fabricante original del software (no significa necesariamente que estas imágenes "originales" procedan de fabricantes oficiales de software). Las imágenes oficiales enumeran sus vulnerabilidades potenciales.
 
 ### Ejemplo 1: Hello World
 
