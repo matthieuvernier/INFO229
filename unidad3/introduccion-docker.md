@@ -188,7 +188,7 @@ docker start daemon
 docker ps -a  
 ```
 
-Salidar del terminal:
+Salida del terminal:
 
 ```
 CONTAINER ID  IMAGE   COMMAND                 CREATED        STATUS                    PORTS  NAMES  
@@ -262,12 +262,12 @@ docker inspect test-nginx
 
 Para crear una imagen Docker, debe crear un archivo **Dockerfile**. Es un archivo de texto plano con instrucciones y argumentos. Aquí está la descripción de las instrucciones que vamos a usar en nuestro próximo ejemplo:
 
-    **FROM** - establece la imagen base
-    **RUN** - ejecuta el comando en el contenedor
-    **ENV** - fijar variable de entorno
-    **WORKDIR** - directorio de trabajo de sets
-    **VOLUME** - crea un punto de montaje para un volumen
-    **CMD** - set ejecutable para contenedor
+**FROM** - establece la imagen base
+**RUN** - ejecuta el comando en el contenedor
+**ENV** - fijar variable de entorno
+**WORKDIR** - directorio de trabajo de sets
+**VOLUME** - crea un punto de montaje para un volumen
+**CMD** - set ejecutable para contenedor
 
 Puede consultar la referencia de [Dockerfile](https://docs.docker.com/engine/reference/builder/) para obtener más detalles.
 
@@ -372,32 +372,30 @@ cat ./vol/results
 
 #### Algunas buenas prácticas para crear imágenes Docker:
 
- Incluir sólo el contexto necesario - usar un archivo.dockerignore (como.gitignore en git)
-    Evite la instalación de paquetes innecesarios, ya que consumirá espacio de disco adicional.
-    Usar caché. Añada un contexto que cambie mucho (por ejemplo, el código fuente de su proyecto) al final de Dockerfile, ya que utilizará la caché de Docker de forma eficaz.
-    Tenga cuidado con los volúmenes. Debe recordar qué datos están en volúmenes. Debido a que los volúmenes son persistentes y no mueren con los contenedores, el siguiente contenedor utilizará datos del volumen creado por el contenedor anterior.
-    Utilice variables de entorno (en RUN, EXPOSE, VOLUME). Esto hará que su Dockerfile sea más flexible.
+- Eviten la instalación de paquetes innecesarios, ya que consumirá espacio de disco adicional.
+- Tengan cuidado con los volúmenes. Deben recordar qué datos están en volúmenes. Debido a que los volúmenes son persistentes y no mueren con los contenedores, el siguiente contenedor utilizará datos del volumen creado por el contenedor anterior.
+- Utilice variables de entorno (en RUN, EXPOSE, VOLUME). Esto hará que su Dockerfile sea más flexible.
 
-Imágenes alpinas
 
-Muchas de las imágenes Docker (versiones de imágenes) se crean sobre Alpine Linux - esta es una distribución ligera que le permite reducir el tamaño total de las imágenes Docker.
+#### Imágenes alpinas
 
-Le recomiendo que utilice imágenes basadas en Alpine para servicios de terceros, como Redis, Postgres, etc. Para sus imágenes de aplicación, utilice imágenes basadas en buildpack - será fácil de depurar dentro del contenedor, y tendrá muchos requisitos preinstalados en todo el sistema.
+Muchas de las imágenes Docker (versiones de imágenes) se crean sobre **Alpine Linux* - esta es una distribución ligera que le permite reducir el tamaño total de las imágenes Docker.
+
+Le recomiendo que utilicen imágenes basadas en Alpine para servicios de terceros, como Redis, Postgres, etc. Para sus imágenes de aplicación, utilicen imágenes basadas en **buildpack** - será fácil de trabajar dentro del contenedor y tendrá muchos requisitos preinstalados en todo el sistema.
 
 Sólo usted puede decidir qué imagen base utilizar, pero puede obtener el máximo beneficio utilizando una imagen básica para todas las imágenes, ya que en este caso la caché se utilizará de forma más eficaz.
 
-
-
 ### Ejemplo 4: Conecciones entre contenedores
 
-  Docker compose - es una utilidad CLI utilizada para conectar contenedores entre sí.
+**Docker compose** - es un software CLI utilizada para conectar contenedores entre sí.
+
 Puede instalar docker-composite vía pip:
 
 ```
 sudo pip install docker-compose  
 ```
 
- En este ejemplo, voy a conectar los contenedores Python y Redis.
+En este ejemplo, vamos a conectar los contenedores Python y Redis.
 
 ```
 version: '3.6'  
@@ -410,7 +408,7 @@ services:
     environment:
       - REDIS_HOST=redis
     ports:
-      - "5000:5000"
+      - "3001:5000"
   redis:
     image: redis:3.2-alpine
     volumes:
@@ -419,15 +417,17 @@ volumes:
   redis_data:
 ```
 
- Vaya a examples/compose y ejecute el siguiente comando:
+Vayan a examples/compose y ejecute el siguiente comando:
 
 ```
 docker-compose up  
 ```
 
-El ejemplo actual incrementará la vista del contador en Redis. Abra la dirección 127.0.0.0.1:5000 en su navegador web y compruébelo.
+El ejemplo actual incrementará la vista del contador en Redis. Abra la dirección 127.0.0.0.1:3001 en su navegador web y compruébelo.
 
-Cómo usar docker-compose es un tema para un tutorial aparte. Para empezar, puedes jugar con algunas imágenes del Docker Hub. Si desea crear sus propias imágenes, siga las mejores prácticas enumeradas anteriormente. Lo único que puedo añadir en términos de usar docker-compost es que siempre debes dar nombres explícitos a tus volúmenes en docker-compost.yml (si la imagen tiene volúmenes). Esta sencilla regla le ahorrará un problema en el futuro cuando inspeccione sus volúmenes.
+Cómo usar docker-compose es un tema para un tutorial aparte. Para empezar, pueden jugar con algunas imágenes del Docker Hub. Si desean crear sus propias imágenes, sigan las mejores prácticas enumeradas anteriormente. 
+
+Siempre deben dar nombres explícitos a sus volúmenes en docker-compose.yml (si la imagen tiene volúmenes). Esta sencilla regla les ahorrará un problema en el futuro cuando inspeccionen sus volúmenes.
 
 ```
 version: '3.6'  
@@ -441,9 +441,9 @@ volumes:
   redis_data:
 ```
 
-En este caso, redis_data será el nombre dentro del archivo docker-compos.yml; para el nombre real del volumen, será precedido por el prefijo del nombre del proyecto.
+En este caso, redis_data será el nombre dentro del archivo docker-compose.yml.
 
-Para ver los volúmenes, ejecute:
+Para ver los volúmenes, ejecuten:
   
 ```
 docker volume ls 
@@ -475,3 +475,5 @@ Al igual que los contenedores estándar utilizados en el transporte de carga, la
 ### Para ir más lejo:
 
 - Despliegar su último contenedor en un servidor del Instituto de Informática, utilizando Docker y GitHub.
+- Crear una imagen Docker para despliegar una aplicación web básica (con la librería Flask por ejemplo) que diga "Hola Mundo".
+- Crear una imagen Docker para despliegar una aplicación web básica que se conecte a MySQL
