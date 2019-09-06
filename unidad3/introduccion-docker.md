@@ -216,11 +216,12 @@ docker rm -f $(docker ps -aq)
 
 ### Ejemplo 2: Variables de entorno y volumenes
 
-Descargar el enlace siguiente: [link]()
+Descargar el enlace siguiente: [link](docker-workshop-master.zip)
+Descomprimir el archivo en su carpeta de trabajo y posicionarse en la carpeta **examples**
 
 Es hora de crear y ejecutar un contenedor más relevante, como [Nginx](https://es.wikipedia.org/wiki/Nginx). NGinx es un servidor web de código abierto muy utilizado.
 
-Cambiar el directorio a ejemplos/nginx:
+Cambiar el directorio a ejamples/nginx:
 
 
 ```
