@@ -20,8 +20,8 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 - **Unidad 2:** Procesos de integración continua, pruebas y monitoreo de una arquitectura de software
 
 - **Unidad 3:** Procesos de despliegue continuo de una arquitectura de software
-	- [Introducción a Docker](unidad3/introduccion-docker.md)
-	- Introducción a Docker-Compose
+	- [Introducción a Docker](unidad3/tp1-introduccion-docker.md)
+	- [Introducción a Docker-Compose](unidad3/tp2-docker-compose.md)
 	- Introducción a Kubernete
 
 - **Proyecto transversal** Construcción de un software para la indexación y búsqueda de información en un ecosistema de medios
