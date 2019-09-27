@@ -16,6 +16,7 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 ## Contenidos
 
 - **Unidad 1:** Procesos de diseño con patrones arquitectónicos
+	- [Katas de arquitectura](https://docs.google.com/presentation/d/1SMeFc1w0bnyj_L2tCnYc7BJO5T81HS3ceyfbK7UUVZU/edit?usp=sharing)
 
 - **Unidad 2:** Procesos de integración continua, pruebas y monitoreo de una arquitectura de software
 
@@ -26,6 +27,7 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 
 - **Proyecto transversal** Construcción de un software para la indexación y búsqueda de información en un ecosistema de medios
 	- [Web-scraping en Python](proyecto/web-scraping-python.ipynb)
+	- [Sophia2](proyecto/Sophia2): repositorio de la arquitectura Sophia2 que desplegar con Docker
 
 ***
 ## Bibliografía 

@@ -1,0 +1,26 @@
+version: '3.6'
+
+services:
+  s1-sophia2-mongodb:
+    build: "./s1-sophia2-mongodb"
+    container_name: s1-sophia2-mongodb
+    volumes:
+      - "./volumes/s1-sophia2-mongodb:/data/db"
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sophia2
+      - MONGO_INITDB_ROOT_PASSWORD=sophia2
+ 
+  s2-sophia2-newscollector: 
+    build: "./s2-sophia2-newscollector"
+    container_name: s1-sophia2-newscollector
+    links:
+      - s1-sophia2-mongodb
+    restart: always
+    environment:
+      - MONGO_URI=mongodb://sophia2:sophia2@s1-sophia2-mongodb:27017/admin
+
+
+
