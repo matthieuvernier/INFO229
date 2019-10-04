@@ -18,7 +18,7 @@ Al inicio del semestre, la arquitectura de Sophia2 es muy sencilla. Está consti
 1.  **s1-sophia2-mongodb**: este servicio levanta una instancia del SGBD no relacional MongoDB
 2. **s2-sophia2-newscollector**: este servicio levanta un script python que se conecta a la pagina web del medio __elmundo.es__, recopila los enlaces de las últimas noticias, realiza un scraping de estas páginas e indexa datos en Mongo (url de la noticia, fecha, titulo, texto, medio y datos html brutos)
 
-La arquitectura inicial puede representar con el esquema siguiente:
+La arquitectura inicial puede representarse con el esquema siguiente:
 
 ![Arquitectura inicial de Sophia2](arquitectura-inicial-sophia2.png)
 
