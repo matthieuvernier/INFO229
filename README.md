@@ -17,6 +17,8 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 
 - **Unidad 1:** Procesos de diseño con patrones arquitectónicos
 	- [Katas de arquitectura](https://docs.google.com/presentation/d/1SMeFc1w0bnyj_L2tCnYc7BJO5T81HS3ceyfbK7UUVZU/edit?usp=sharing)
+	- [Introducción a los patrones arquitectónicos](https://docs.google.com/presentation/d/1cdvBKSnTlft512IfUHiJWnP0_AQMh66guRek_9lGrDA/edit?usp=sharing)
+	- [Arquitectura basada en eventos: Tutoriales RabbitMQ](https://www.rabbitmq.com/getstarted.html)
 
 - **Unidad 2:** Procesos de integración continua, pruebas y monitoreo de una arquitectura de software
 
