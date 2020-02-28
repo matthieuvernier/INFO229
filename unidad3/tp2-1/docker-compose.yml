@@ -1,0 +1,32 @@
+version: '3.6'
+
+services:
+  app_python:
+    build:
+      context: ./app
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER='info229'
+      - MYSQL_PASS='info229'
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'info229'
+      MYSQL_USER: 'info229'
+      MYSQL_PASSWORD: 'info229'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3307:3306'
+    expose:
+      # Opens port 3307 on the container
+      - '3307'
+    # Where our data will be persisted
+    volumes:
+      - data-mysql-info229:$PWD/data/
+# Names our volume
+volumes:
+  data-mysql-info229:
