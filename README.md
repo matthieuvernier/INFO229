@@ -21,6 +21,7 @@ La asignatura **Arquitectura de software** tiene como principal propósito que l
 	- [Arquitectura basada en eventos: Tutoriales RabbitMQ](https://www.rabbitmq.com/getstarted.html)
 
 - **Unidad 2:** Procesos de integración continua, pruebas y monitoreo de una arquitectura de software
+	- [Introducción al Test-Driven Development (TDD)](unidad2/TP1-TDD.md)	
 
 - **Unidad 3:** Procesos de despliegue continuo de una arquitectura de software
 	- [Introducción a Docker](unidad3/tp1-introduccion-docker.md)
